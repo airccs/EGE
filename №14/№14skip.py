@@ -1,4 +1,4 @@
-for x in "0123456789ABCDEFGH":
+for x in "0123456789ABCDEF":
     if (int(f'D49{x}1', 16) + int(f'48A3{x}', 16)) % 14 == 0:
         print((int(f'D49{x}1', 18) + int(f'48A3{x}', 18)) // 14)
 
@@ -26,4 +26,4 @@ for x in range(7, 36):
 
 for x in "0123456789ABCDEFGH":
     if (int(f'AB5{x}3', 18) + int(f'EF{x}13', 18)) % 17 == 0:
-        print((int(f'AB5{x}3', 18) + int(f'EF{x}13', 18))) // 17)
+        print((int(f'AB5{x}3', 18) + int(f'EF{x}13', 18)) // 17)
