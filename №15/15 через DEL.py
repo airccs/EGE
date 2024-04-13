@@ -8,3 +8,17 @@ for a in range(1, 10000):
             break
     else:
         print(a)
+
+
+def Del(n, m):
+    return n % m == 0
+
+
+for a in range(1, 1000):
+    s = True
+    for x in range(1, 1000):
+        if ((Del(x, a) and Del(x, 30)) <= ((not (Del(x, 30))) or Del(x, 40))) == False:
+            s = False
+            break
+    if s:
+        print(a)
