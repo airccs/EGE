@@ -1,16 +1,20 @@
 from turtle import *
-k=30
-tracer(0)
-screensize(5000,5000)
+speed(0)
+left(90)
 pendown()
-for i in range(9):
-    circle(5*k,-180)
-    left(180)
+k = 10
+begin_fill()
+for i in range(12):
     right(90)
-penup()
-for x in range(-20,20):
-    for y in range(-20, 20):
-        setpos(x*k,y*k)
-        dot()
-print(39*4+81)
+    forward(120 * k)
+    right(90)
+    forward(14 * k)
+end_fill()
+canvas = getcanvas()
+cnt = 0
+for x in range(-1000, 1000):
+    for y in range(-1000, 1000):
+        if canvas.find_overlapping(x * k, y * k, x * k, y * k) != ():
+            cnt += 1
+print(cnt)
 done()
