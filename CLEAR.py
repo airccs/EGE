@@ -1,9 +1,19 @@
-with open("17.5_14652 (2).txt") as f:
-    st = f.read()
-t = list(map(int, st.split()))
-t1 = []
-for i in range(len(t) - 1):
-    if (t[i] > 0 and t[i] ** 0.5 == int(t[i] ** 0.5)) + (t[i + 1] > 0 and t[i + 1] ** 0.5 == int(t[i + 1] ** 0.5)) >= 1:
-        s = t[i] + t[i + 1]
-        t1.append(s)
-print(len(t1), max(t1))
+from functools import lru_cache
+def moves(s):
+    t = [s+1]
+    if s % 2 !=0:
+        t.append(s*2)
+    if s % 2 ==0:
+        t.append(s*1.5)
+    return t
+
+@lru_cache
+def game(s):
+    if any(m >= 84 for m in moves(s)): return "p1"
+    if all(game(m) == "p1" for m in moves(s)): return "v1"
+    if any(game(m) == "v1" for m in moves(s)): return "p2"
+    if all(game(m) == "p1" or game(m) == "p2" for m in moves(s)): return "v12"
+
+for s in range(1, 84):
+    if game(s) == "v12":
+        print(s)
