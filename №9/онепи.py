@@ -9,5 +9,5 @@ for j in f:
             p.append(t[i])
         if t.count(t[i]) == 1:
             n.append(t[i])
-    if len(p)==3:
+    if len(p) == 3:
         print(t, p, n)
