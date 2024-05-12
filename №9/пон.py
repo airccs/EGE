@@ -1,7 +1,16 @@
-f = open("")
-cnt = 0
-for s in f:
-    t = list(map(int, s.split()))
-    povt = [x for x in t if t.count(x) > 1]
-    nep = [x for x in t if t.count(x) == 1]
-    if len(povt) == 2 and povt[0] % 2 == 0 and
+f = open("9_15321.csv")
+k = 0
+for j in f:
+    t = list(map(int, j.split(";")))
+    p = []
+    n = []
+    b = []
+    for i in range(len(t)):
+        if t.count(t[i]) == 4:
+            p.append(t[i])
+        if t.count(t[i]) == 2:
+            n.append(t[i])
+        if t.count(t[i]) == 2:
+            b.append(t[i])
+    if len(p) == 3:
+        print(t, p, n)
