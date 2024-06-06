@@ -4,7 +4,6 @@ tracer(0)
 left(90)
 screensize(5000,5000)
 pendown()
-
 for i in range(4):
     forward(10 * k)
     right(270)
